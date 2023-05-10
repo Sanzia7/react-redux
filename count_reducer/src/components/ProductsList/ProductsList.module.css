@@ -1,0 +1,14 @@
+.container {
+   margin: 12px;
+   padding: 12px;
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 20px;
+}
+
+h1 {
+   color: tomato;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   padding-left:  50px;
+}
