@@ -20,9 +20,11 @@ export const productsReducer = (state = defaultState, action) => {
 
       case DECR_COUNT:
          const prodDecr = state.find((el) => el.id === action.payload)
-         if (prodDecr.count > 0)
-            prodDecr.count--
-         return state.filter(el => el.id !== action.payload)
+         prodDecr.count--
+         if (prodDecr.count === 0) {
+            state = state.filter(el=> el.id !== action.payload)
+         } 
+         return [...state]
 
       case REM_BY_ID:
          return state.filter(elem => elem.id !== action.payload)
