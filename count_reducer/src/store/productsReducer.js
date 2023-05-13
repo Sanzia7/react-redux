@@ -4,6 +4,7 @@ const defaultState = [
    { id: 3, title: 'Гантели', count: 7 },
    { id: 4, title: 'Ракетки', count: 1 }
 ]
+const products = JSON.parse(localStorage.getItem('products')) ?? defaultState
 
 const INCR_COUNT = 'INCR_COUNT'
 const DECR_COUNT = 'DECR_COUNT'
@@ -11,7 +12,7 @@ const REM_BY_ID = 'REM_BY_ID'
 const ADD_NEW_PRODUCT_CART = 'ADD_NEW_PRODUCT_CART'
 
 
-export const productsReducer = (state = defaultState, action) => {
+export const productsReducer = (state = products, action) => {
    switch (action.type) {
       case INCR_COUNT:
          let prodIncr = state.find((elem) => elem.id === action.payload)

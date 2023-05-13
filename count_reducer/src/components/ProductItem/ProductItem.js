@@ -8,14 +8,14 @@ function ProductItem({ id, title, count }) {
 
    return (
       <div className={s.product}>
-         <p>номер: {id}</p>
+         <p>ID: {id}</p>
          <p>Название: {title}</p>         
          <div className={s.btns}>
-            {/* <button onClick={() => dispatch(incrCountAction(id))}>+</button> */}
-            <div onClick={() => dispatch(incrCountAction(id))}>+</div>
+            <button onClick={() => dispatch(incrCountAction(id))}>+</button>
+            {/* <div onClick={() => dispatch(incrCountAction(id))}>+</div> */}
             <p>Количество: {count}</p>
-            {/* <button onClick={() => dispatch(decrCountAction(id))}>-</button> */}
-            <div onClick={() => dispatch(decrCountAction(id))}>-</div>
+            <button onClick={() => dispatch(decrCountAction(id))}>-</button>
+            {/* <div onClick={() => dispatch(decrCountAction(id))}>-</div> */}
             <button onClick={() => dispatch(remByIdAction(id))}>X</button>            
          </div>
       </div>
