@@ -1,15 +1,20 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import ProductItem from '../ProductItem/ProductItem'
 import s from './ProductsList.module.css'
+import { addNewProductCartAction } from '../../store/productsReducer'
 
 
 function ProductsList() {
    const products = useSelector(state => state.products)
-   
+   let dispatch = useDispatch()
+
    return (
       <>
          <h1>Products:</h1>
-         <div className={s.container}>   
+
+         <button onClick={() => dispatch(addNewProductCartAction(prompt()))}>Добавить новый товар</button>
+
+         <div className={s.container}>
             {
                products.map(elem =>
                   <ProductItem
